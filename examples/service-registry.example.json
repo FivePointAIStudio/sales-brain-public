@@ -1,0 +1,11 @@
+{
+  "services": {
+    "customer-context": {"base_url": "https://customer-context.example.com", "token": "REPLACE_WITH_RANDOM_SERVICE_TOKEN_00000000"},
+    "customer-orchestrator": {"base_url": "https://customer-orchestrator.example.com", "token": "REPLACE_WITH_RANDOM_SERVICE_TOKEN_00000000"},
+    "company-knowledge": {"base_url": "https://company-knowledge.example.com", "token": "REPLACE_WITH_RANDOM_SERVICE_TOKEN_00000000"},
+    "product-catalog": {"base_url": "https://product-catalog.example.com", "token": "REPLACE_WITH_RANDOM_SERVICE_TOKEN_00000000"},
+    "product-matching": {"base_url": "https://product-matching.example.com", "token": "REPLACE_WITH_RANDOM_SERVICE_TOKEN_00000000"},
+    "pricing": {"base_url": "https://pricing.example.com", "token": "REPLACE_WITH_RANDOM_SERVICE_TOKEN_00000000"},
+    "sales-workflows": {"base_url": "https://sales-workflows.example.com", "token": "REPLACE_WITH_RANDOM_SERVICE_TOKEN_00000000"}
+  }
+}

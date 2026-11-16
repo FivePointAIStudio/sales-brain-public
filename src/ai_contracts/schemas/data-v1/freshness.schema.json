@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-sales:data-v1:freshness",
+  "type": "object",
+  "properties": {
+    "source_updated_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "source_watermark": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ingested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "indexed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "business_verified_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "source_freshness_known": {
+      "type": "boolean"
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "source_updated_at",
+    "source_watermark",
+    "ingested_at",
+    "indexed_at",
+    "observed_at",
+    "business_verified_at",
+    "source_freshness_known",
+    "source_ref"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "source_freshness_known": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_watermark": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

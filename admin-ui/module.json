@@ -1,0 +1,12 @@
+{
+  "service": "sales-brain",
+  "version": "1.0.0",
+  "label": "AI 大脑与 Agent",
+  "owner": "sales-brain",
+  "status_path": "/v1/status",
+  "pages": [
+    {"id": "agents", "label": "Agent 配置", "list": "/v1/agents", "read": "/v1/agents/{id}", "save": {"method": "PUT", "path": "/v1/agents/{id}"}, "publish": {"method": "POST", "path": "/v1/agents/{id}/publish"}, "concurrency": "expected_revision", "fields": ["name", "public_identity", "region", "language", "brand", "role", "tone", "greeting", "greeting_rule", "communication", "response_style", "active"]},
+    {"id": "model", "label": "模型状态", "read": "/v1/status", "probe": {"method": "POST", "path": "/v1/provider/probe", "description": "两次匿名模型格式验证；不会发送客户消息"}},
+    {"id": "runs", "label": "计划与工具证据", "read": "/v1/runs/{id}", "read_only": true}
+  ]
+}

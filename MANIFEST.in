@@ -1,0 +1,6 @@
+include README.md LICENSE SECURITY.md THIRD_PARTY_NOTICES
+recursive-include examples *
+recursive-include migrations *.sql
+recursive-include admin-ui *.json
+recursive-include src/ai_contracts/schemas *.json
+recursive-include tests *.py

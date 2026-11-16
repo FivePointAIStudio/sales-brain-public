@@ -1,0 +1,7 @@
+# Synthetic values only. Keep actual secrets outside the repository.
+SA_TENANT_ID=example-tenant
+SA_ENVIRONMENT=test
+SA_DATABASE_URL=postgresql://user:password@127.0.0.1:5432/sales_brain_test
+SA_AUTH_TOKENS_FILE=/path/outside/repository/auth-tokens.json
+SA_SERVICE_REGISTRY_FILE=/path/outside/repository/service-registry.json
+BRAIN_PRIVATE_DIR=/path/outside/repository/model-config

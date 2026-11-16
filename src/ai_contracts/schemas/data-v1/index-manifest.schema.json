@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-sales:data-v1:index-manifest",
+  "type": "object",
+  "properties": {
+    "manifest_version": {
+      "const": "1.0"
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "catalog_generation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "index_generation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_template_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "preprocess_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "embedding_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "embedding_dimension": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "vector_metric": {
+      "enum": [
+        "cosine",
+        "inner_product",
+        "l2"
+      ]
+    },
+    "eligible_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "vector_ready_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "coverage": {
+      "enum": [
+        "complete",
+        "partial"
+      ]
+    },
+    "built_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_watermark": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "manifest_version",
+    "tenant_id",
+    "scope_fingerprint",
+    "catalog_generation",
+    "index_generation",
+    "document_template_version",
+    "preprocess_version",
+    "embedding_model",
+    "embedding_dimension",
+    "vector_metric",
+    "eligible_count",
+    "vector_ready_count",
+    "coverage",
+    "built_at",
+    "source_watermark"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "intents": {
+      "items": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "properties": {
+              "certainty": {
+                "enum": [
+                  "explicit",
+                  "ambiguous"
+                ]
+              },
+              "kind": {
+                "enum": [
+                  "contact_request",
+                  "quote_request",
+                  "sample_request",
+                  "order_request",
+                  "callback_request",
+                  "customer_fact",
+                  "general_question"
+                ]
+              },
+              "source_event_refs": {
+                "items": {
+                  "maxLength": 240,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "maxItems": 64,
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "source_quotes": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "event_ref": {
+                      "maxLength": 240,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "quote": {
+                      "maxLength": 6000,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "event_ref",
+                    "quote"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 32,
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "certainty",
+              "source_event_refs",
+              "source_quotes"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "certainty": {
+                "enum": [
+                  "explicit",
+                  "ambiguous"
+                ]
+              },
+              "kind": {
+                "enum": [
+                  "product_compare",
+                  "product_interest",
+                  "product_media_request",
+                  "product_reshow",
+                  "product_search"
+                ]
+              },
+              "product_reference": {
+                "maxLength": 240,
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_event_refs": {
+                "items": {
+                  "maxLength": 240,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "maxItems": 64,
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "source_quotes": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "event_ref": {
+                      "maxLength": 240,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "quote": {
+                      "maxLength": 6000,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "event_ref",
+                    "quote"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 32,
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "certainty",
+              "source_event_refs",
+              "source_quotes"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "certainty": {
+                "enum": [
+                  "explicit",
+                  "ambiguous"
+                ]
+              },
+              "contact_scope": {
+                "enum": [
+                  "outbound_only",
+                  "all_contact"
+                ]
+              },
+              "kind": {
+                "const": "stop_contact"
+              },
+              "source_event_refs": {
+                "items": {
+                  "maxLength": 240,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "maxItems": 64,
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "source_quotes": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "event_ref": {
+                      "maxLength": 240,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "quote": {
+                      "maxLength": 6000,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "event_ref",
+                    "quote"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 32,
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "kind",
+              "certainty",
+              "source_event_refs",
+              "source_quotes"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "maxItems": 32,
+      "type": "array"
+    }
+  },
+  "required": [
+    "intents"
+  ],
+  "type": "object"
+}

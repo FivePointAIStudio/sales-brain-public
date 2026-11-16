@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "contact_scope": {
+      "enum": [
+        "outbound_only",
+        "all_contact"
+      ]
+    },
+    "customer_ref": {
+      "maxLength": 240,
+      "minLength": 1,
+      "type": "string"
+    },
+    "environment": {
+      "enum": [
+        "sandbox",
+        "shadow",
+        "live"
+      ]
+    },
+    "intent_ref": {
+      "maxLength": 240,
+      "minLength": 1,
+      "type": "string"
+    },
+    "policy_kind": {
+      "const": "contact_restriction"
+    },
+    "projection_ref": {
+      "maxLength": 240,
+      "minLength": 1,
+      "type": "string"
+    },
+    "region": {
+      "maxLength": 240,
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_context_version": {
+      "maxLength": 240,
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_event_refs": {
+      "items": {
+        "maxLength": 240,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "status": {
+      "const": "active"
+    },
+    "tenant_ref": {
+      "maxLength": 240,
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "projection_ref",
+    "policy_kind",
+    "contact_scope",
+    "tenant_ref",
+    "customer_ref",
+    "region",
+    "environment",
+    "intent_ref",
+    "source_event_refs",
+    "source_context_version",
+    "status"
+  ],
+  "type": "object"
+}

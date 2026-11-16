@@ -1,0 +1,5 @@
+# Third-party notices
+
+The `src/ai_contracts` package contains the minimal first-party contracts runtime and schema resources required by this project, incorporated from the FivePointAIStudio `ai-contracts` project at source revision `0eabda972875b321024fcf75f15ea64c008caecf`. The public release applies the accompanying MIT license to this included project code. No separate third-party source license notices were present in the frozen contracts source.
+
+Runtime dependencies remain separate packages and are distributed under their own licenses; see their respective distributions and metadata.

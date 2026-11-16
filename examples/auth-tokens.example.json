@@ -1,0 +1,11 @@
+{
+  "tokens": [
+    {
+      "sha256": "REPLACE_WITH_SHA256_OF_A_RANDOM_BEARER_TOKEN",
+      "subject": "demo-caller",
+      "tenant_id": "example-tenant",
+      "regions": ["BKK"],
+      "scopes": ["read", "execute"]
+    }
+  ]
+}
